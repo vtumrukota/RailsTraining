@@ -1,28 +1,23 @@
-== README
+Day 1 - Rails. Need to write test cases to cover everything
+Models Task
+Create a concern called “Deletable” that can tell u whether a record is deleted or not. IT should have a field called deleted that is set to true or false
+create a scope within that concern to return all records that are either deleted or not deleted based on a parameter
+create a method within that concern to delete a record
+create 2 models, Articles and DeletedArticles that use that concern to figure out whether records are deleted or not. the models should have other fields like title, name, etc
+create an observer so that anytime a record is deleted from Articles, it gets replicated into DeletedArticles
+Create a method in the models, using helpers, that returns a call to Model.find_recent_x(). x should be a number, and it should return the x most recent (based on created_at) records.
+ie I should be able to call Article.find_recent_5() and it’ll return the most recent articles
+Without copying the code, I should also be able to call the same method for DeletedArticle
+Show me all of the above in action
+Models Task 2
+Add a polymorphic field to Articles above called attachment. An attachment can either be an image, or a video, or something else
+Create 2 other models, Images, and Videos.
+Create 2 records in Articles and assign an image to 1, a video to the other as attachments
+Use the paperclip gem to assign and print the url for the video and the image
+show me this working
+create an association that returns all images for a given article. show me this working
+Models Task 3
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Day 2: putting it all together. Should be completed by EOD Friday
+Build the polymorphic survey engine described here():  using angular, and save the data as a json in the back end. The app must support authentication using username and password. User should be able to to sign up/in, create a surveys, save them, retrieve them, and take them
+Implement a way to delete a survey after 1 hour of it being created. It should schedule the delete using a feature of rails that supports that
